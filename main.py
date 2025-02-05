@@ -1,6 +1,8 @@
 import RPi.GPIO as GPIO
 import time
 
+print("Starting the program...")
+
 # GPIO pin pro relé
 RELAY_PIN = 17  
 
@@ -12,11 +14,11 @@ GPIO.setup(RELAY_PIN, GPIO.OUT)
 GPIO.output(RELAY_PIN, GPIO.HIGH)
 
 def reset_device():
-    print("Reset zařízení...")
+    print("Reset device")
     GPIO.output(RELAY_PIN, GPIO.LOW)  # Sepnutí relé 
     time.sleep(1)  # Doba resetu
     GPIO.output(RELAY_PIN, GPIO.HIGH)  # Vypnutí relé 
-    print("Reset dokončen")
+    print("Reset complete")
 
 try:
     while True:
@@ -24,5 +26,5 @@ try:
         reset_device()   # Proveď reset
 
 except KeyboardInterrupt:
-    print("Ukončuji program...")
+    print("Exiting the program...")
     GPIO.cleanup()  # Uvolnění GPIO pinů
