@@ -5,8 +5,6 @@
 ```console
 sudo git clone https://github.com/ondrahladik/Relay-Reset.git  
 cd Relay-Reset
-```
-```console
 sudo cp config config-SAMPLE.py config.py
 ```
 
@@ -14,6 +12,7 @@ sudo cp config config-SAMPLE.py config.py
 ```console
 sudo nano config.py
 ```
+
 ```python
 RELAY_PIN = 17
 MQTT_BROKER = ""  # MQTT broker
