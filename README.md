@@ -36,6 +36,7 @@ You can run the program and check if it works as it should:
 ```console
 sudo python3 main.py
 ```
+If everything is running, it would be better to set up a service so that the program runs in the background.
 
 ## Service config
 Creating a service file:
