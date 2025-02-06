@@ -3,8 +3,12 @@
 ## Install
 
 ```console
+sudo apt update
+sudo apt upgrade
+sudo apt install python3-pip
 sudo git clone https://github.com/ondrahladik/Relay-Reset.git  
 cd Relay-Reset
+sudo pip3 install -r requirements.txt
 sudo cp config-SAMPLE.py config.py
 ```
 
