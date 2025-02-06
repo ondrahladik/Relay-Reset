@@ -33,14 +33,14 @@ MQTT_USERNAME = ""
 MQTT_PASSWORD = ""
 ```
 You can run the program and check if it works as it should:
-```console
+```shell
 sudo python3 main.py
 ```
 If everything is running, it would be better to set up a service so that the program runs in the background.
 
 ## Service config
 Creating a service file:
-```console
+```shell
 sudo nano /etc/systemd/system/Relay-Reset.service
 ```
 Put these lines in the file:
@@ -60,13 +60,13 @@ Restart=always
 WantedBy=multi-user.target
 ```
 Starting the service:
-```console
+```shell
 sudo systemctl daemon-reload
 sudo systemctl enable Relay-Reset
 sudo systemctl start Relay-Reset
 ```
 Service management:
-```bash
+```shell
 sudo systemctl start Relay-Reset # Starting the service
 sudo systemctl restart Relay-Reset # Restart the service
 sudo systemctl stop Relay-Reset # Stop the service
