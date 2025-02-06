@@ -2,9 +2,5 @@
 
 ## Install
 
-```console
-sudo git clone https://github.com/ondrahladik/Relay-Reset.git
-```
-```console
-cd Relay-Reset
-```
+sudo git clone https://github.com/ondrahladik/Relay-Reset.git  
+cd Relay-Reset  
