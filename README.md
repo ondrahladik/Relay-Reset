@@ -60,3 +60,9 @@ sudo systemctl daemon-reload
 sudo systemctl enable Relay-Reset
 sudo systemctl start Relay-Reset
 ```
+Service management:
+```console
+sudo systemctl restart Relay-Reset
+sudo systemctl stop Relay-Reset
+tail -f /var/log/Relay-Reset.log
+```
