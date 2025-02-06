@@ -27,13 +27,15 @@ if MQTT_ACTIVE:
 
     client.on_message = on_message
 
-    # Připojení k MQTT brokeru
-    try:
-        client.connect(MQTT_BROKER, MQTT_PORT, 60)
-        client.subscribe(MQTT_TOPIC)
-    except Exception as e:
-        print(f"Chyba při připojování k MQTT brokeru: {e}")
-        exit(1)
+    # Připojení k MQTT brokeru s opakováním pokusů při neúspěchu
+    while True:
+        try:
+            client.connect(MQTT_BROKER, MQTT_PORT, 60)
+            client.subscribe(MQTT_TOPIC)
+            break  # Připojení bylo úspěšné, break z opakovací smyčky
+        except Exception as e:
+            print(f"Chyba při připojování k MQTT brokeru: {e}. Pokusím se znovu za 5 sekund.")
+            time.sleep(5)
 
 try:
     if MQTT_ACTIVE:
