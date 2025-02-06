@@ -49,4 +49,3 @@ except KeyboardInterrupt:
 finally:
     if MQTT_ACTIVE:
         client.loop_stop()
-    GPIO.cleanup()
