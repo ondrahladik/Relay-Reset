@@ -67,9 +67,9 @@ sudo systemctl start Relay-Reset
 ```
 Service management:
 ```console
-sudo systemctl start Relay-Reset
-sudo systemctl restart Relay-Reset
-sudo systemctl stop Relay-Reset
-sudo systemctl status Relay-Reset
-tail -f /var/log/Relay-Reset.log
+sudo systemctl start Relay-Reset # Starting the service
+sudo systemctl restart Relay-Reset # Restart the service
+sudo systemctl stop Relay-Reset # Stop the service
+sudo systemctl status Relay-Reset # Service status
+tail -f /var/log/Relay-Reset.log # Tracking logs
 ```
