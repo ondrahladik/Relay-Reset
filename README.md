@@ -66,7 +66,7 @@ sudo systemctl enable Relay-Reset
 sudo systemctl start Relay-Reset
 ```
 Service management:
-```python
+```bash
 sudo systemctl start Relay-Reset # Starting the service
 sudo systemctl restart Relay-Reset # Restart the service
 sudo systemctl stop Relay-Reset # Stop the service
