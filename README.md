@@ -48,6 +48,7 @@ Put these lines in the file:
 [Unit]
 Description=Relay-Reset
 After=network.target
+Wants=network-online.target
 
 [Service]
 ExecStart=/usr/bin/python3 /opt/Relay-Reset/main.py
@@ -58,6 +59,10 @@ Restart=always
 
 [Install]
 WantedBy=multi-user.target
+```
+```console
+sudo chmod 666 /var/log/Relay-Reset.log
+sudo chmod 666 /var/log/Relay-Reset_error.log
 ```
 Starting the service:
 ```console
