@@ -32,6 +32,10 @@ MQTT_TOPIC = "relay"  # MQTT topic
 MQTT_USERNAME = ""
 MQTT_PASSWORD = ""
 ```
+You can run the program and check if it works as it should:
+```console
+sudo python3 main.py
+```
 
 ## Service config
 Creating a service file:
