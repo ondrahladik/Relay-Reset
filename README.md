@@ -2,7 +2,7 @@
 
 ## Install
 
-```
+```console
 cd /opt
 sudo apt update
 sudo apt upgrade
@@ -14,7 +14,7 @@ sudo cp config-SAMPLE.py config.py
 ```
 
 ## Config
-```
+```console
 sudo nano config.py
 ```
 
@@ -33,18 +33,18 @@ MQTT_USERNAME = ""
 MQTT_PASSWORD = ""
 ```
 You can run the program and check if it works as it should:
-```
+```console
 sudo python3 main.py
 ```
 If everything is running, it would be better to set up a service so that the program runs in the background.
 
 ## Service config
 Creating a service file:
-```
+```console
 sudo nano /etc/systemd/system/Relay-Reset.service
 ```
 Put these lines in the file:
-```
+```console
 [Unit]
 Description=Relay-Reset
 After=network.target
@@ -60,13 +60,13 @@ Restart=always
 WantedBy=multi-user.target
 ```
 Starting the service:
-```
+```console
 sudo systemctl daemon-reload
 sudo systemctl enable Relay-Reset
 sudo systemctl start Relay-Reset
 ```
 Service management:
-```
+```console
 sudo systemctl start Relay-Reset # Starting the service
 sudo systemctl restart Relay-Reset # Restart the service
 sudo systemctl stop Relay-Reset # Stop the service
