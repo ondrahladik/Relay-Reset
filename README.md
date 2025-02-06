@@ -34,11 +34,11 @@ MQTT_PASSWORD = ""
 ```
 
 ## Service config
-
+Creating a service file:
 ```console
 sudo nano /etc/systemd/system/Relay-Reset.service
 ```
-
+Put these lines in the file:
 ```console
 [Unit]
 Description=Relay-Reset
@@ -54,8 +54,7 @@ Restart=always
 [Install]
 WantedBy=multi-user.target
 ```
-
-Starting the service
+Starting the service:
 ```console
 sudo systemctl daemon-reload
 sudo systemctl enable Relay-Reset
