@@ -3,6 +3,7 @@
 ## Install
 
 ```console
+cd /opt
 sudo apt update
 sudo apt upgrade
 sudo apt install python3-pip
@@ -30,4 +31,32 @@ MQTT_TOPIC = "relay"  # MQTT topic
 # If you have MQTT authentication
 MQTT_USERNAME = ""
 MQTT_PASSWORD = ""
+```
+
+## Service config
+
+```console
+sudo nano /etc/systemd/system/Relay-Reset.service
+```
+
+```console
+[Unit]
+Description=Relay-Reset
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/python3 /opt/Relay-Reset/main.py
+WorkingDirectory=/opt/Relay-Reset
+StandardOutput=append:/var/log/Relay-Reset.log
+StandardError=append:/var/log/Relay-Reset_error.log
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+```
+
+```console
+sudo systemctl daemon-reload
+sudo systemctl enable Relay-Reset
+sudo systemctl start Relay-Reset
 ```
