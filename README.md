@@ -5,7 +5,7 @@
 ```console
 sudo git clone https://github.com/ondrahladik/Relay-Reset.git  
 cd Relay-Reset
-sudo cp config config-SAMPLE.py config.py
+sudo cp config-SAMPLE.py config.py
 ```
 
 ## Config
