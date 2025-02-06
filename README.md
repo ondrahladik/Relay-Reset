@@ -55,6 +55,7 @@ Restart=always
 WantedBy=multi-user.target
 ```
 
+Starting the service
 ```console
 sudo systemctl daemon-reload
 sudo systemctl enable Relay-Reset
