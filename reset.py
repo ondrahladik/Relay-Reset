@@ -24,16 +24,16 @@ def reset_relay():
         GPIO.output(RELAY_PIN, GPIO.HIGH)  
         time.sleep(RELAY_DELAY)            
         GPIO.output(RELAY_PIN, GPIO.LOW)   
-        logging.info("Reset relay complete.")
+        logging.info("Reset relay complete")
     except Exception as e:
         logging.error(f"Error resetting relay: {e}")
     finally:
         GPIO.cleanup()
-        logging.info("GPIO cleanup complete.")
+        logging.info("GPIO cleanup complete")
 
 # Function to reset the device
 def reset_device():
-    logging.info("Rebooting device.")  
+    logging.info("Rebooting device")  
     try:
         os.system("sudo reboot")
     except Exception as e:
@@ -41,7 +41,7 @@ def reset_device():
 
 # Function to reset all (relay and device)
 def reset_all():
-    logging.info("Reset device and relay.")  
+    logging.info("Reset device and relay")  
     reset_relay()
     time.sleep(2)  
     reset_device()

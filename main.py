@@ -51,7 +51,7 @@ if MQTT_ACTIVE:
             client.subscribe(MQTT_TOPIC)
             break  
         except Exception as e:
-            logging.error(f"Error connecting to MQTT broker: {e}. I will try again in 5 seconds.")
+            logging.error(f"Error connecting to MQTT broker: {e}")
             time.sleep(5)
 
 try:
