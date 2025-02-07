@@ -4,6 +4,15 @@ import logging
 import RPi.GPIO as GPIO
 from config import RELAY_PIN, RELAY_DELAY
 
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s', 
+    handlers=[
+        logging.FileHandler('/var/log/Relay-Reset.log'),
+        logging.StreamHandler()
+    ]
+)
+
 # Function to reset the relay
 def reset_relay():
     logging.info("Reset relay")  

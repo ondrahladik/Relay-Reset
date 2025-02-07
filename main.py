@@ -6,6 +6,15 @@ import paho.mqtt.client as mqtt
 from reset import reset_relay, reset_device, reset_all
 from config import RESET_TIME, MQTT_ACTIVE, MQTT_BROKER, MQTT_PORT, MQTT_TOPIC, MQTT_USERNAME, MQTT_PASSWORD
 
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s', 
+    handlers=[
+        logging.FileHandler('/var/log/Relay-Reset.log'),
+        logging.StreamHandler()
+    ]
+)
+
 # Umlčování DeprecationWarning
 warnings.filterwarnings("ignore", category=DeprecationWarning)
 
