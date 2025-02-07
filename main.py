@@ -15,6 +15,8 @@ logging.basicConfig(
     ]
 )
 
+logging.info("Program started") 
+
 # Umlčování DeprecationWarning
 warnings.filterwarnings("ignore", category=DeprecationWarning)
 
@@ -51,7 +53,7 @@ if MQTT_ACTIVE:
             client.subscribe(MQTT_TOPIC)
             break  
         except Exception as e:
-            logging.error(f"Error connecting to MQTT broker: {e}")
+            logging.error(f"Connecting to MQTT broker: {e}")
             time.sleep(5)
 
 try:
