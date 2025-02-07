@@ -1,5 +1,7 @@
 # Relay-Reset
 
+![image](pinout.jpg)
+
 ## Install
 
 ```console
