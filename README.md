@@ -1,6 +1,6 @@
 # Relay-Reset
 
-![image](pinout.jpg)
+![image](/pinout.jpg)
 
 ## Install
 
