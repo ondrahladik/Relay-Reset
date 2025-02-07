@@ -1,7 +1,7 @@
 import time
+import logging
 import schedule
 import warnings
-import RPi.GPIO as GPIO
 import paho.mqtt.client as mqtt
 from reset import reset_relay, reset_device, reset_all
 from config import RESET_TIME, MQTT_ACTIVE, MQTT_BROKER, MQTT_PORT, MQTT_TOPIC, MQTT_USERNAME, MQTT_PASSWORD
@@ -23,7 +23,7 @@ def on_message(client, userdata, msg):
     elif payload == "reset-all":
         reset_all()
     else:
-        print(f"Unknown command: {payload}")
+        logging.error(f"Unknown command: {payload}")
 
 # Initialize the MQTT client only if MQTT is active
 if MQTT_ACTIVE:
@@ -42,7 +42,7 @@ if MQTT_ACTIVE:
             client.subscribe(MQTT_TOPIC)
             break  
         except Exception as e:
-            print(f"Error connecting to MQTT broker: {e}. I will try again in 5 seconds.")
+            logging.error(f"Error connecting to MQTT broker: {e}. I will try again in 5 seconds.")
             time.sleep(5)
 
 try:
