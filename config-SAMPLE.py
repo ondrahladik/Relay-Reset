@@ -9,5 +9,5 @@ MQTT_PORT = 1883  # MQTT port
 MQTT_TOPIC = "relay"  # MQTT topic
 
 # If you have MQTT authentication
-MQTT_USERNAME = ""
-MQTT_PASSWORD = ""
+MQTT_USERNAME = "" # MQTT username
+MQTT_PASSWORD = "" # MQTT password
