@@ -8,8 +8,8 @@ A Python program intended for Raspberry Pi, which aims to switch the relay via G
 Also added support for manual control in several modes via MQTT. I created the Reset-Relay-Web [Reset-Relay-Web](https://github.com/ondrahladik/Relay-Reset-Web) project for the control itself, which you can simply put into operation.   
 
 MQTT commands and individual functions for control:
-- `reset-relay` - closes the contact and restarts the relay
-- `reset-device`
+- `reset-relay` closes the contact and restarts the relay
+- `reset-device` reboots the device (Raspberry Pi)
 - `reset-all`
 - `off-relay`
 - `on-relay`
