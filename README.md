@@ -16,6 +16,8 @@ MQTT commands and individual functions for control:
 
 The entire program is very easily configurable in the `config.py` file, the entire installation process is described below.  
 
+As for connecting the relay, the standard configuration is pin 17, but you can change it. The reset device in the relay should be in the normally closed state.
+
 ## Install
 
 ```console
