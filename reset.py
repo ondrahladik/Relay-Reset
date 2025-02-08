@@ -2,7 +2,7 @@ import os
 import time
 import logging
 import RPi.GPIO as GPIO
-from config import RELAY_PIN, RELAY_DELAY
+from config import RELAY_PIN, RELAY_DELAY, RELAY_DELAY_DEVICE
 
 logging.basicConfig(
     level=logging.INFO,
@@ -43,7 +43,7 @@ def reset_device():
 def reset_all():
     logging.info("Reset device and relay")  
     reset_relay()
-    time.sleep(2)  
+    time.sleep(RELAY_DELAY_DEVICE)  
     reset_device()
 
 def off_relay():

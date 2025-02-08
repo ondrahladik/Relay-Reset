@@ -1,5 +1,6 @@
 RELAY_PIN = 17
 RELAY_DELAY = 2  # Activation delay for relay in seconds
+RELAY_DELAY_DEVICE = 2  # Device reset delay after relay reset
 RESET_TIME = "16:00" # Time of day to reset the device
 
 MQTT_ACTIVE = False  # Enable MQTT
