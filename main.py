@@ -3,7 +3,7 @@ import logging
 import schedule
 import warnings
 import paho.mqtt.client as mqtt
-from reset import reset_relay, reset_device, reset_all
+from reset import reset_relay, reset_device, reset_all, off_relay, on_relay
 from config import RESET_TIME, MQTT_ACTIVE, MQTT_BROKER, MQTT_PORT, MQTT_TOPIC, MQTT_USERNAME, MQTT_PASSWORD
 
 logging.basicConfig(
@@ -33,6 +33,10 @@ def on_message(client, userdata, msg):
         reset_device()
     elif payload == "reset-all":
         reset_all()
+    elif payload == "off-relay":
+        off_relay()
+    elif payload == "on-relay":
+        on_relay()
     else:
         logging.error(f"Unknown command: {payload}")
 

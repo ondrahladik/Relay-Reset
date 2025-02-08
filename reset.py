@@ -45,3 +45,24 @@ def reset_all():
     reset_relay()
     time.sleep(2)  
     reset_device()
+
+def off_relay():
+    logging.info("Turn off relay")  
+
+    try:
+        # Set the GPIO mode
+        GPIO.setmode(GPIO.BCM)
+        GPIO.setup(RELAY_PIN, GPIO.OUT)
+        GPIO.output(RELAY_PIN, GPIO.HIGH)   
+        logging.info("Turn off relay complete")
+    except Exception as e:
+        logging.error(f"Turn off relay: {e}")
+
+def on_relay():
+    logging.info("Turn on relay")  
+
+    try:
+        GPIO.cleanup() # Clear the GPIO configuration
+        logging.info("Turn on relay complete")
+    except Exception as e:
+        logging.error(f"Turn on relay: {e}")
