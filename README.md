@@ -14,6 +14,8 @@ MQTT commands and individual functions for control:
 - `off-relay` closes the relay contact
 - `on-relay` opens the relay contact
 
+The entire program is very easily configurable in the `config.py` file, the entire installation process is described below.  
+
 ## Install
 
 ```console
