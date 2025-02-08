@@ -33,11 +33,12 @@ sudo cp config-SAMPLE.py config.py
 ```console
 sudo nano config.py
 ```
-
+This is a configuration file in which you can set, for example, the pin for the relay, the reset time, or the complete MQTT settings, including MQTT deactivation.
 ```python
 RELAY_PIN = 17
 RELAY_DELAY = 2  # Activation delay for relay in seconds
-RESET_TIME = "" # Time of day to reset the device
+RELAY_DELAY_DEVICE = 2  # Device reset delay after relay reset
+RESET_TIME = "16:00" # Time of day to reset the device
 
 MQTT_ACTIVE = False  # Enable MQTT
 MQTT_BROKER = ""  # MQTT broker
